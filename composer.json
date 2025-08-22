@@ -20,6 +20,7 @@
         "friendsofphp/php-cs-fixer": "^3.86",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-phpunit": "^2.0",
         "phpunit/phpunit": "^12.3",
         "ruudk/readme-examples-sync-hook": "^1.0",
         "shipmonk/composer-dependency-analyser": "^1.8",
