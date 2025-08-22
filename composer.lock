@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d2736625f92b6b692d24bb0f24e9f1e3",
+    "content-hash": "46db37a4bea9d4806a7f3e6fab6167a6",
     "packages": [
         {
             "name": "psr/container",
@@ -61,16 +61,16 @@
         },
         {
             "name": "ruudk/code-generator",
-            "version": "0.3.0",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ruudk/code-generator.git",
-                "reference": "77685c5e30b48e6b600ab1cbbe6764c16c5e56e8"
+                "reference": "cd583c3344780e8b75d595cd0cc9d4c30b627ece"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ruudk/code-generator/zipball/77685c5e30b48e6b600ab1cbbe6764c16c5e56e8",
-                "reference": "77685c5e30b48e6b600ab1cbbe6764c16c5e56e8",
+                "url": "https://api.github.com/repos/ruudk/code-generator/zipball/cd583c3344780e8b75d595cd0cc9d4c30b627ece",
+                "reference": "cd583c3344780e8b75d595cd0cc9d4c30b627ece",
                 "shasum": ""
             },
             "require": {
@@ -82,8 +82,10 @@
                 "friendsofphp/php-cs-fixer": "^3.85",
                 "phpstan/extension-installer": "^1.4",
                 "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-phpunit": "^2.0",
                 "phpunit/phpunit": "^12.3",
                 "ruudk/readme-examples-sync-hook": "^1.0",
+                "shipmonk/composer-dependency-analyser": "^1.8",
                 "ticketswap/php-cs-fixer-config": "^1.0",
                 "ticketswap/phpstan-error-formatter": "^1.1"
             },
@@ -110,9 +112,15 @@
             ],
             "support": {
                 "issues": "https://github.com/ruudk/code-generator/issues",
-                "source": "https://github.com/ruudk/code-generator/tree/0.3.0"
+                "source": "https://github.com/ruudk/code-generator/tree/0.4.0"
             },
-            "time": "2025-08-21T17:27:01+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/ruudk",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-08-22T17:53:56+00:00"
         },
         {
             "name": "symfony/dependency-injection",

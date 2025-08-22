@@ -8,6 +8,7 @@ use Exception;
 use Generator;
 use InvalidArgumentException;
 use Ruudk\CodeGenerator\CodeGenerator;
+use Ruudk\CodeGenerator\FunctionName;
 use Ruudk\CodeGenerator\Group;
 use Symfony\Component\DependencyInjection\Argument\ArgumentInterface;
 use Symfony\Component\DependencyInjection\Argument\IteratorArgument;
@@ -316,7 +317,7 @@ final readonly class SymfonyConfigCodeGenerator
         $id = $value instanceof TypedReference ? sprintf('%s $%s', $value, $value->getName()) : (string) $value;
 
         $call = $this->generator->dumpFunctionCall(
-            $this->generator->import('function Symfony\Component\DependencyInjection\Loader\Configurator\service'),
+            $this->generator->import(new FunctionName('Symfony\Component\DependencyInjection\Loader\Configurator\service')),
             [
                 $this->export($id),
             ],
@@ -382,7 +383,7 @@ final readonly class SymfonyConfigCodeGenerator
         }
 
         yield from $this->generator->dumpFunctionCall(
-            $this->generator->import(sprintf('function Symfony\Component\DependencyInjection\Loader\Configurator\%s', $function)),
+            $this->generator->import(new FunctionName(sprintf('Symfony\Component\DependencyInjection\Loader\Configurator\%s', $function))),
             $args,
         );
     }
@@ -393,7 +394,7 @@ final readonly class SymfonyConfigCodeGenerator
     private function dumpIterator(IteratorArgument $value) : Generator
     {
         yield from $this->generator->dumpFunctionCall(
-            $this->generator->import('function Symfony\Component\DependencyInjection\Loader\Configurator\iterator'),
+            $this->generator->import(new FunctionName('Symfony\Component\DependencyInjection\Loader\Configurator\iterator')),
             [
                 $this->export($value->getValues()),
             ],
@@ -406,7 +407,7 @@ final readonly class SymfonyConfigCodeGenerator
     private function dumpEnv(string $name) : Generator
     {
         yield from $this->generator->dumpFunctionCall(
-            $this->generator->import('function Symfony\Component\DependencyInjection\Loader\Configurator\env'),
+            $this->generator->import(new FunctionName('Symfony\Component\DependencyInjection\Loader\Configurator\env')),
             $this->export($name),
         );
     }
@@ -417,7 +418,7 @@ final readonly class SymfonyConfigCodeGenerator
     private function dumpParam(string $name) : Generator
     {
         yield from $this->generator->dumpFunctionCall(
-            $this->generator->import('function Symfony\Component\DependencyInjection\Loader\Configurator\param'),
+            $this->generator->import(new FunctionName('Symfony\Component\DependencyInjection\Loader\Configurator\param')),
             $this->export($name),
         );
     }
@@ -428,7 +429,7 @@ final readonly class SymfonyConfigCodeGenerator
     private function dumpServiceClosure(string $value) : Generator
     {
         yield from $this->generator->dumpFunctionCall(
-            $this->generator->import('function Symfony\Component\DependencyInjection\Loader\Configurator\service_closure'),
+            $this->generator->import(new FunctionName('Symfony\Component\DependencyInjection\Loader\Configurator\service_closure')),
             $this->export($value),
         );
     }
@@ -445,7 +446,7 @@ final readonly class SymfonyConfigCodeGenerator
         }
 
         yield from $this->generator->dumpFunctionCall(
-            $this->generator->import('function Symfony\Component\DependencyInjection\Loader\Configurator\service_locator'),
+            $this->generator->import(new FunctionName('Symfony\Component\DependencyInjection\Loader\Configurator\service_locator')),
             $this->export($input->getValues()),
         );
     }
@@ -456,7 +457,7 @@ final readonly class SymfonyConfigCodeGenerator
     private function dumpInlineService(Definition $service) : Generator
     {
         $call = $this->generator->dumpFunctionCall(
-            $this->generator->import('function Symfony\Component\DependencyInjection\Loader\Configurator\inline_service'),
+            $this->generator->import(new FunctionName('Symfony\Component\DependencyInjection\Loader\Configurator\inline_service')),
             $this->export($service->getClass()),
         );
 
@@ -510,7 +511,7 @@ final readonly class SymfonyConfigCodeGenerator
     private function dumpExpression(Expression $expression) : Generator
     {
         yield from $this->generator->dumpFunctionCall(
-            $this->generator->import('function Symfony\Component\DependencyInjection\Loader\Configurator\expr'),
+            $this->generator->import(new FunctionName('Symfony\Component\DependencyInjection\Loader\Configurator\expr')),
             $this->export((string) $expression),
         );
     }
