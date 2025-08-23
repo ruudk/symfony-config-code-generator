@@ -61,16 +61,16 @@
         },
         {
             "name": "ruudk/code-generator",
-            "version": "0.4.0",
+            "version": "0.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ruudk/code-generator.git",
-                "reference": "cd583c3344780e8b75d595cd0cc9d4c30b627ece"
+                "reference": "743473506794b20a8954c5805cb2fd5bdac735b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ruudk/code-generator/zipball/cd583c3344780e8b75d595cd0cc9d4c30b627ece",
-                "reference": "cd583c3344780e8b75d595cd0cc9d4c30b627ece",
+                "url": "https://api.github.com/repos/ruudk/code-generator/zipball/743473506794b20a8954c5805cb2fd5bdac735b4",
+                "reference": "743473506794b20a8954c5805cb2fd5bdac735b4",
                 "shasum": ""
             },
             "require": {
@@ -112,7 +112,7 @@
             ],
             "support": {
                 "issues": "https://github.com/ruudk/code-generator/issues",
-                "source": "https://github.com/ruudk/code-generator/tree/0.4.0"
+                "source": "https://github.com/ruudk/code-generator/tree/0.4.3"
             },
             "funding": [
                 {
@@ -120,7 +120,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-22T17:53:56+00:00"
+            "time": "2025-08-23T08:34:17+00:00"
         },
         {
             "name": "symfony/dependency-injection",
