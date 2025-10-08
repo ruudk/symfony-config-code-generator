@@ -147,7 +147,7 @@ return static function (ContainerConfigurator $configurator) : void {
 
     $services->set(
         'app.feature_service',
-        \App\Service\FeatureService::class,
+        App\Service\FeatureService::class,
     )
         ->args(
             [
@@ -157,7 +157,7 @@ return static function (ContainerConfigurator $configurator) : void {
 
     $services->set(
         'app.handler_registry',
-        \App\Service\HandlerRegistry::class,
+        App\Service\HandlerRegistry::class,
     )
         ->args(
             [
@@ -167,13 +167,13 @@ return static function (ContainerConfigurator $configurator) : void {
 
     $services->set(
         'app.logger',
-        \Psr\Log\LoggerInterface::class,
+        Psr\Log\LoggerInterface::class,
     )
         ->autowire();
 
     $services->set(
         'app.mailer',
-        \App\Service\MailerService::class,
+        App\Service\MailerService::class,
     )
         ->args(
             [
@@ -198,7 +198,7 @@ return static function (ContainerConfigurator $configurator) : void {
 
     $services->set(
         'app.request_listener',
-        \App\EventListener\RequestListener::class,
+        App\EventListener\RequestListener::class,
     )
         ->tag(
             'kernel.event_listener',
@@ -210,7 +210,7 @@ return static function (ContainerConfigurator $configurator) : void {
 
     $services->set(
         'app.user_handler',
-        \App\Handler\UserHandler::class,
+        App\Handler\UserHandler::class,
     )
         ->tag('app.handler');
 };
