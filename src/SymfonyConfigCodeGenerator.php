@@ -249,10 +249,10 @@ final readonly class SymfonyConfigCodeGenerator
             yield from $this->dumpParam(substr($input, 1, -1));
         } elseif (is_string($input) && ($this->isFqcn($input) || $this->fqcnExists($input))) {
             // The class could not yet exist at compile time, so we need to check if it starts with TicketSwap\
-            yield '\\' . $input . '::class';
+            yield $input . '::class';
         } elseif (is_scalar($input)) {
             if (is_string($input) && preg_match('/^(?<fqcn>[\w\\\\]+) \$(?<name>\w+)$/', $input, $matches) === 1) {
-                yield sprintf("\\%s::class . ' \$%s'", $matches['fqcn'], $matches['name']);
+                yield sprintf("%s::class . ' \$%s'", $matches['fqcn'], $matches['name']);
             } else {
                 yield var_export($input, true);
             }
@@ -275,7 +275,7 @@ final readonly class SymfonyConfigCodeGenerator
         } elseif ($input instanceof Definition) {
             yield from $this->dumpInlineService($input);
         } elseif ($input instanceof UnitEnum) {
-            yield '\\' . $input::class . '::' . $input->name;
+            yield $input::class . '::' . $input->name;
         } elseif (is_array($input)) {
             if ($input === []) {
                 yield '[]';

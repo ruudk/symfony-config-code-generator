@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "46db37a4bea9d4806a7f3e6fab6167a6",
+    "content-hash": "dac45048505b925120b429102831081f",
     "packages": [
         {
             "name": "psr/container",
@@ -61,16 +61,16 @@
         },
         {
             "name": "ruudk/code-generator",
-            "version": "0.4.3",
+            "version": "0.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ruudk/code-generator.git",
-                "reference": "743473506794b20a8954c5805cb2fd5bdac735b4"
+                "reference": "02c895c49f545ecb21e26f92508b520694dd82eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ruudk/code-generator/zipball/743473506794b20a8954c5805cb2fd5bdac735b4",
-                "reference": "743473506794b20a8954c5805cb2fd5bdac735b4",
+                "url": "https://api.github.com/repos/ruudk/code-generator/zipball/02c895c49f545ecb21e26f92508b520694dd82eb",
+                "reference": "02c895c49f545ecb21e26f92508b520694dd82eb",
                 "shasum": ""
             },
             "require": {
@@ -112,7 +112,7 @@
             ],
             "support": {
                 "issues": "https://github.com/ruudk/code-generator/issues",
-                "source": "https://github.com/ruudk/code-generator/tree/0.4.3"
+                "source": "https://github.com/ruudk/code-generator/tree/0.4.5"
             },
             "funding": [
                 {
@@ -120,7 +120,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-23T08:34:17+00:00"
+            "time": "2025-10-08T13:27:26+00:00"
         },
         {
             "name": "symfony/dependency-injection",

@@ -109,7 +109,7 @@ final class SymfonyConfigCodeGeneratorTest extends TestCase
 
                     $services->set(
                         'app.logger',
-                        \Psr\Log\LoggerInterface::class,
+                        Psr\Log\LoggerInterface::class,
                     )
                         ->autowire();
                 };
@@ -147,7 +147,7 @@ final class SymfonyConfigCodeGeneratorTest extends TestCase
 
                     $services->set(
                         'app.mailer',
-                        \App\Mailer\MailerService::class,
+                        App\Mailer\MailerService::class,
                     )
                         ->args(
                             [
@@ -189,7 +189,7 @@ final class SymfonyConfigCodeGeneratorTest extends TestCase
 
                     $services->set(
                         'app.listener',
-                        \App\EventListener\UserListener::class,
+                        App\EventListener\UserListener::class,
                     )
                         ->call(
                             'setLogger',
@@ -237,7 +237,7 @@ final class SymfonyConfigCodeGeneratorTest extends TestCase
 
                     $services->set(
                         'app.event_listener',
-                        \App\EventListener\RequestListener::class,
+                        App\EventListener\RequestListener::class,
                     )
                         ->tag(
                             'kernel.event_listener',
@@ -281,7 +281,7 @@ final class SymfonyConfigCodeGeneratorTest extends TestCase
 
                     $services->set(
                         'app.command',
-                        \App\Command\ProcessCommand::class,
+                        App\Command\ProcessCommand::class,
                     )
                         ->tag('console.command')
                         ->autoconfigure();
@@ -314,7 +314,7 @@ final class SymfonyConfigCodeGeneratorTest extends TestCase
 
                     $services->set(
                         'app.service',
-                        \App\Service\DynamicService::class,
+                        App\Service\DynamicService::class,
                     )
                         ->args(
                             [
@@ -404,7 +404,7 @@ final class SymfonyConfigCodeGeneratorTest extends TestCase
 
                     $services->set(
                         'app.complex',
-                        \App\Service\ComplexService::class,
+                        App\Service\ComplexService::class,
                     )
                         ->args(
                             [
@@ -456,7 +456,7 @@ final class SymfonyConfigCodeGeneratorTest extends TestCase
 
                     $services->set(
                         'app.mailer_decorator',
-                        \App\Mailer\DecoratedMailer::class,
+                        App\Mailer\DecoratedMailer::class,
                     )
                         ->decorate('mailer');
                 };
@@ -488,11 +488,11 @@ final class SymfonyConfigCodeGeneratorTest extends TestCase
 
                     $services->set(
                         'app.handler',
-                        \App\Handler\MessageHandler::class,
+                        App\Handler\MessageHandler::class,
                     )
                         ->args(
                             [
-                                service(\Psr\Log\LoggerInterface::class . ' $logger'),
+                                service(Psr\Log\LoggerInterface::class . ' $logger'),
                             ],
                         );
                 };
@@ -527,11 +527,11 @@ final class SymfonyConfigCodeGeneratorTest extends TestCase
 
                     $services->set(
                         'app.custom_logger',
-                        \App\Logger\CustomLogger::class,
+                        App\Logger\CustomLogger::class,
                     );
 
                     $services->alias(
-                        \Psr\Log\LoggerInterface::class,
+                        Psr\Log\LoggerInterface::class,
                         'app.custom_logger',
                     );
                 };
@@ -567,7 +567,7 @@ final class SymfonyConfigCodeGeneratorTest extends TestCase
                     if ($configurator->env() === 'dev') {
                         $services->set(
                             'app.debug_logger',
-                            \App\Logger\DebugLogger::class,
+                            App\Logger\DebugLogger::class,
                         );
                     }
                 };
@@ -599,7 +599,7 @@ final class SymfonyConfigCodeGeneratorTest extends TestCase
 
                     $services->set(
                         'app.service',
-                        \App\Service\MyService::class,
+                        App\Service\MyService::class,
                     );
                 };
 
