@@ -15,14 +15,13 @@
         "symfony/dependency-injection": "^7.3"
     },
     "require-dev": {
-        "captainhook/captainhook-phar": "^5.25",
         "ergebnis/composer-normalize": "^2.47",
         "friendsofphp/php-cs-fixer": "^3.86",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan": "^2.1",
         "phpstan/phpstan-phpunit": "^2.0",
         "phpunit/phpunit": "^12.3",
-        "ruudk/readme-examples-sync-hook": "^1.0",
+        "ruudk/readme-examples-sync-hook": "^2.0",
         "shipmonk/composer-dependency-analyser": "^1.8",
         "symfony/expression-language": "^7.3",
         "ticketswap/php-cs-fixer-config": "^1.1",
@@ -40,9 +39,13 @@
     },
     "config": {
         "allow-plugins": {
-            "captainhook/captainhook-phar": true,
             "ergebnis/composer-normalize": true,
             "phpstan/extension-installer": true
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "command -v lefthook >/dev/null 2>&1 && lefthook install || true"
+        ]
     }
 }
