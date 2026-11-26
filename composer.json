@@ -20,7 +20,7 @@
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan": "^2.1",
         "phpstan/phpstan-phpunit": "^2.0",
-        "phpunit/phpunit": "^12.3",
+        "phpunit/phpunit": "^13.4",
         "ruudk/readme-examples-sync-hook": "^2.0",
         "shipmonk/composer-dependency-analyser": "^1.8",
         "symfony/expression-language": "^7.4 || ^8.0",
