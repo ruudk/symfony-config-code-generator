@@ -143,7 +143,10 @@ final readonly class SymfonyConfigCodeGenerator
         }
 
         if (count($envs) > 1) {
-            yield sprintf('if (in_array($configurator->env(), [%s], true)) {', implode(', ', $envs));
+            yield sprintf('if (in_array($configurator->env(), [%s], true)) {', implode(', ', array_map(
+                static fn(string $env): string => var_export($env, true),
+                $envs,
+            )));
         } else {
             yield sprintf('if ($configurator->env() === %s) {', var_export($envs[0], true));
         }

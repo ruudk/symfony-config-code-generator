@@ -547,6 +547,41 @@ final class SymfonyConfigCodeGeneratorTest extends TestCase
             PHP, $container);
     }
 
+    public function testDumpFileWithMultipleEnvironmentSpecificService(): void
+    {
+        $container = new ContainerBuilder();
+
+        $definition = $container->register('app.debug_logger', 'App\Logger\DebugLogger');
+        $definition->addTag('container.env', [
+            'env' => 'test',
+        ]);
+        $definition->addTag('container.env', [
+            'env' => 'dev',
+        ]);
+
+        $this->assertDumpFile(<<<'PHP'
+            <?php
+
+            declare(strict_types=1);
+
+            use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+
+            // This file was automatically generated and should not be edited.
+
+            return static function (ContainerConfigurator $configurator) : void {
+                $services = $configurator->services();
+
+                if (in_array($configurator->env(), ['dev', 'test'], true)) {
+                    $services->set(
+                        'app.debug_logger',
+                        App\Logger\DebugLogger::class,
+                    );
+                }
+            };
+
+            PHP, $container);
+    }
+
     public function testDumpFileSkipsServiceContainer(): void
     {
         $container = new ContainerBuilder();
