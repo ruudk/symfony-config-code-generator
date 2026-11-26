@@ -77,8 +77,11 @@ jobs:
       - name: Check dependencies
         run: vendor/bin/composer-dependency-analyser
 
-      - name: Run PHP CS Fixer
-        run: vendor/bin/php-cs-fixer check --diff --ansi
+      - name: Check formatting
+        run: vendor/bin/mago fmt --check
 
-      - name: Run PHPStan
-        run: vendor/bin/phpstan analyse --ansi
+      - name: Run Mago linter
+        run: vendor/bin/mago lint --minimum-fail-level=warning
+
+      - name: Run Mago analyzer
+        run: vendor/bin/mago analyze --minimum-fail-level=warning

@@ -36,9 +36,9 @@ pre-commit:
                 - "composer.lock"
             run: vendor/bin/composer-dependency-analyser
 
-        php-cs-fixer:
+        mago-fmt:
             glob: "*.php"
-            run: vendor/bin/php-cs-fixer fix --config .php-cs-fixer.php -- {staged_files}
+            run: vendor/bin/mago fmt -- {staged_files}
             stage_fixed: true
 
         twig-cs-fixer:
@@ -46,11 +46,17 @@ pre-commit:
             run: vendor/bin/twig-cs-fixer fix -- {staged_files}
             stage_fixed: true
 
-        phpstan:
+        mago-lint:
             glob:
                 - "*.php"
-                - "*.neon"
-            run: vendor/bin/phpstan
+                - "mago.toml"
+            run: vendor/bin/mago lint --minimum-fail-level=warning
+
+        mago-analyze:
+            glob:
+                - "*.php"
+                - "mago.toml"
+            run: vendor/bin/mago analyze --minimum-fail-level=warning
 
         phpunit:
             glob: "*.php"
