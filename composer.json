@@ -15,17 +15,12 @@
         "symfony/dependency-injection": "^7.4 || ^8.0"
     },
     "require-dev": {
+        "carthage-software/mago": "^1.61",
         "ergebnis/composer-normalize": "^2.47",
-        "friendsofphp/php-cs-fixer": "^3.86",
-        "phpstan/extension-installer": "^1.4",
-        "phpstan/phpstan": "^2.1",
-        "phpstan/phpstan-phpunit": "^2.0",
         "phpunit/phpunit": "^13.4",
         "ruudk/readme-examples-sync-hook": "^2.0",
         "shipmonk/composer-dependency-analyser": "^1.8",
-        "symfony/expression-language": "^7.4 || ^8.0",
-        "ticketswap/php-cs-fixer-config": "^1.1",
-        "ticketswap/phpstan-error-formatter": "^1.1"
+        "symfony/expression-language": "^7.4 || ^8.0"
     },
     "autoload": {
         "psr-4": {
@@ -39,8 +34,8 @@
     },
     "config": {
         "allow-plugins": {
-            "ergebnis/composer-normalize": true,
-            "phpstan/extension-installer": true
+            "carthage-software/mago": true,
+            "ergebnis/composer-normalize": true
         }
     },
     "scripts": {

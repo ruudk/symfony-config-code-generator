@@ -7,8 +7,12 @@ use ShipMonk\ComposerDependencyAnalyser\Config\ErrorType;
 
 $config = new Configuration();
 
-$config->ignoreErrorsOnPackageAndPath('symfony/expression-language', 'src/SymfonyConfigCodeGenerator.php', [
-    ErrorType::DEV_DEPENDENCY_IN_PROD,
-]);
+$config->ignoreErrorsOnPackageAndPath(
+    'symfony/expression-language',
+    'src/SymfonyConfigCodeGenerator.php',
+    [
+        ErrorType::DEV_DEPENDENCY_IN_PROD,
+    ],
+);
 
 return $config;

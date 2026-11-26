@@ -1,0 +1,32 @@
+# For full documentation, see https://mago.carthage.software/tools/overview
+php-version = "8.5.0"
+
+[source]
+workspace = "."
+paths = ["examples/", "src/", "tests/", "composer-dependency-analyser.php"]
+includes = ["vendor"]
+
+[formatter]
+preserve-breaking-parameter-list = true
+
+[linter]
+integrations = ["symfony", "phpunit"]
+
+[linter.rules]
+ambiguous-function-call = { enabled = false }
+literal-named-argument = { enabled = false }
+halstead = { enabled = false }
+no-boolean-flag-parameter = { enabled = false }
+excessive-parameter-list = { enabled = false }
+too-many-methods = { enabled = false }
+cyclomatic-complexity = { enabled = false }
+kan-defect = { enabled = false }
+
+[analyzer]
+plugins = ["phpunit", "symfony"]
+# Exporting arbitrary container values means working with `mixed` by design.
+ignore = ["mixed-assignment"]
+check-missing-override = true
+check-missing-type-hints = true
+find-overly-wide-return-types = true
+find-unused-definitions = true
