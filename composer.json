@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": "^8.4",
+        "php": "^8.5",
         "ruudk/code-generator": "^0.4.5",
         "symfony/dependency-injection": "^7.4 || ^8.0"
     },
